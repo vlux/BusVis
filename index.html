@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>bus vis</title>
+  <link href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" rel="stylesheet" />
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
+  <link href='style.css' rel='stylesheet' />
+
+  <script src="d3.js"></script>
+  <script src="jquery.js"></script>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js"></script>
+
+</head>
+
+<body>
+
+  <div id="container">
+    <h1>Geneva</h1>
+    <div id="content">
+      <h2>Routes</h2>
+      <ul>
+        <li><a href="#" id="toggle-route-1" class="toggle-routes">1</a>
+        </li>
+        <li><a href="#" id="toggle-route-2" class="toggle-routes">2</a>
+        </li>
+        <li><a href="#" id="toggle-route-03" class="toggle-routes">03</a>
+        </li>
+        <li><a href="#" id="toggle-route-04" class="toggle-routes">04</a>
+        </li>
+        <li><a href="#" id="toggle-route-5" class="toggle-routes">5</a>
+        </li>
+        <li><a href="#" id="toggle-route-06" class="toggle-routes">06</a>
+        </li>
+        <li><a href="#" id="toggle-route-07" class="toggle-routes">07</a>
+        </li>
+        <li><a href="#" id="toggle-route-08" class="toggle-routes">08</a>
+        </li>
+        <li><a href="#" id="toggle-route-9" class="toggle-routes">9</a>
+        </li>
+        <li><a href="#" id="toggle-route-10" class="toggle-routes">10</a>
+        </li>
+        <li><a href="#" id="toggle-route-11" class="toggle-routes">11</a>
+        </li>
+        <li><a href="#" id="toggle-route-12" class="toggle-routes">12</a>
+        </li>
+        <li><a href="#" id="toggle-route-12B" class="toggle-routes">12B</a>
+        </li>
+        <li><a href="#" id="toggle-route-14" class="toggle-routes">14</a>
+        </li>
+        <li><a href="#" id="toggle-route-15" class="toggle-routes">15</a>
+        </li>
+        <li><a href="#" id="toggle-route-19" class="toggle-routes">19</a>
+        </li>
+        <li><a href="#" id="toggle-route-21" class="toggle-routes">21</a>
+        </li>
+        <li><a href="#" id="toggle-route-22" class="toggle-routes">22</a>
+        </li>
+        <li><a href="#" id="toggle-route-23" class="toggle-routes">23</a>
+        </li>
+        <li><a href="#" id="toggle-route-28" class="toggle-routes">28</a>
+        </li>
+        <li><a href="#" id="toggle-route-31" class="toggle-routes">31</a>
+        </li>
+        <li><a href="#" id="toggle-route-32" class="toggle-routes">32</a>
+        </li>
+        <li><a href="#" id="toggle-route-22" class="toggle-routes">33</a>
+        </li>
+        <li><a href="#" id="toggle-route-34" class="toggle-routes">34</a>
+        </li>
+        <li><a href="#" id="toggle-route-35" class="toggle-routes">35</a>
+        </li>
+        <li><a href="#" id="toggle-route-36" class="toggle-routes">36</a>
+        </li>
+        <li><a href="#" id="toggle-route-41" class="toggle-routes">41</a>
+        </li>
+        <li><a href="#" id="toggle-route-41S" class="toggle-routes">41S</a>
+        </li>
+        <li><a href="#" id="toggle-route-42" class="toggle-routes">42</a>
+        </li>
+        <li><a href="#" id="toggle-route-43" class="toggle-routes">43</a>
+        </li>
+        <li><a href="#" id="toggle-route-44" class="toggle-routes">44</a>
+        </li>
+        <li><a href="#" id="toggle-route-45" class="toggle-routes">45</a>
+        </li>
+        <li><a href="#" id="toggle-route-46" class="toggle-routes">46</a>
+        </li>
+        <li><a href="#" id="toggle-route-47" class="toggle-routes">47</a>
+        </li>
+        <li><a href="#" id="toggle-route-51" class="toggle-routes">51</a>
+        </li>
+        <li><a href="#" id="toggle-route-53" class="toggle-routes">53</a>
+        </li>
+        <li><a href="#" id="toggle-route-54" class="toggle-routes">54</a>
+        </li>
+        <li><a href="#" id="toggle-route-57" class="toggle-routes">57</a>
+        </li>
+        <li><a href="#" id="toggle-route-80" class="toggle-routes">80</a>
+        </li>
+        <li><a href="#" id="toggle-route-81" class="toggle-routes">81</a>
+        </li>
+        <li><a href="#" id="toggle-route-84" class="toggle-routes">84</a>
+        </li>
+        <li><a href="#" id="toggle-route-85" class="toggle-routes">85</a>
+        </li>
+        <li><a href="#" id="toggle-route-86" class="toggle-routes">86</a>
+        </li>
+        <li><a href="#" id="toggle-route-96" class="toggle-routes">96</a>
+        </li>
+        <li><a href="#" id="toggle-route-A" class="toggle-routes">A</a>
+        </li>
+        <li><a href="#" id="toggle-route-B" class="toggle-routes">B</a>
+        </li>
+        <li><a href="#" id="toggle-route-C" class="toggle-routes">C</a>
+        </li>
+        <li><a href="#" id="toggle-route-D" class="toggle-routes">D</a>
+        </li>
+        <li><a href="#" id="toggle-route-DN" class="toggle-routes">DN</a>
+        </li>
+        <li><a href="#" id="toggle-route-E" class="toggle-routes">E</a>
+        </li>
+        <li><a href="#" id="toggle-route-Eb" class="toggle-routes">Eb</a>
+        </li>
+        <li><a href="#" id="toggle-route-F" class="toggle-routes">F</a>
+        </li>
+        <li><a href="#" id="toggle-route-G" class="toggle-routes">G</a>
+        </li>
+        <li><a href="#" id="toggle-route-Gb" class="toggle-routes">Gb</a>
+        </li>
+        <li><a href="#" id="toggle-route-K" class="toggle-routes">K</a>
+        </li>
+        <li><a href="#" id="toggle-route-L" class="toggle-routes">L</a>
+        </li>
+        <li><a href="#" id="toggle-route-M1" class="toggle-routes">M1</a>
+        </li>
+        <li><a href="#" id="toggle-route-M2" class="toggle-routes">M2</a>
+        </li>
+        <li><a href="#" id="toggle-route-M3" class="toggle-routes">M3</a>
+        </li>
+        <li><a href="#" id="toggle-route-M4" class="toggle-routes">M4</a>
+        </li>
+        <li><a href="#" id="toggle-route-NA" class="toggle-routes">NA</a>
+        </li>
+        <li><a href="#" id="toggle-route-NC" class="toggle-routes">NC</a>
+        </li>
+        <li><a href="#" id="toggle-route-ND" class="toggle-routes">ND</a>
+        </li>
+        <li><a href="#" id="toggle-route-NE" class="toggle-routes">NE</a>
+        </li>
+        <li><a href="#" id="toggle-route-NJ" class="toggle-routes">NJ</a>
+        </li>
+        <li><a href="#" id="toggle-route-NK" class="toggle-routes">NK</a>
+        </li>
+        <li><a href="#" id="toggle-route-NM" class="toggle-routes">NM</a>
+        </li>
+        <li><a href="#" id="toggle-route-NO" class="toggle-routes">NO</a>
+        </li>
+        <li><a href="#" id="toggle-route-NP" class="toggle-routes">NP</a>
+        </li>
+        <li><a href="#" id="toggle-route-NS" class="toggle-routes">NS</a>
+        </li>
+        <li><a href="#" id="toggle-route-NT" class="toggle-routes">NT</a>
+        </li>
+        <li><a href="#" id="toggle-route-NV" class="toggle-routes">NV</a>
+        </li>
+        <li><a href="#" id="toggle-route-O" class="toggle-routes">O</a>
+        </li>
+        <li><a href="#" id="toggle-route-S" class="toggle-routes">S</a>
+        </li>
+        <li><a href="#" id="toggle-route-T" class="toggle-routes">T</a>
+        </li>
+        <li><a href="#" id="toggle-route-TAC1" class="toggle-routes">TAC1</a>
+        </li>
+        <li><a href="#" id="toggle-route-TAC2" class="toggle-routes">TAC2</a>
+        </li>
+        <li><a href="#" id="toggle-route-TAC3" class="toggle-routes">TAC3</a>
+        </li>
+        <li><a href="#" id="toggle-route-TAC4" class="toggle-routes">TAC4</a>
+        </li>
+        <li><a href="#" id="toggle-route-TAC5" class="toggle-routes">TAC5</a>
+        </li>
+        <li><a href="#" id="toggle-route-TACD3" class="toggle-routes">TACD3</a>
+        </li>
+        <li><a href="#" id="toggle-route-V" class="toggle-routes">V</a>
+        </li>
+        <li><a href="#" id="toggle-route-VB" class="toggle-routes">VB</a>
+        </li>
+        <li><a href="#" id="toggle-route-W" class="toggle-routes">W</a>
+        </li>
+        <li><a href="#" id="toggle-route-X" class="toggle-routes">X</a>
+        </li>
+        <li><a href="#" id="toggle-route-Y" class="toggle-routes">Y</a>
+        </li>
+        <li><a href="#" id="toggle-route-Z" class="toggle-routes">Z</a>
+        </li>
+        <!--	 		<li><a href="#" id="toggle-route-0" class="toggle-routes">0</a></li> -->
+      </ul>
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <div id="timeline"></div>
+
+  <script type="text/javascript">
+    L.mapbox.accessToken = '<pk.eyJ1IjoibGl1bHUiLCJhIjoiVzY2cjhiRSJ9.XYnctjNIYOorLU6qpBi5mQ>';
+
+    var mapboxTiles = L.tileLayer('https://{s}.tiles.mapbox.com/v3/liulu.k7flejmm/{z}/{x}/{y}.png', {
+      attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
+    });
+
+    var map = L.map('map')
+      .addLayer(mapboxTiles)
+      .setView([46.2317, 6.1765], 12);
+
+    map._initPathRoot()
+
+    var svg = d3.select("#map").select("svg"),
+      g = svg.append("g");
+
+    routeG = g.append("g").attr("class", "route-g");
+    stopG = g.append("g").attr("class", "stop-g");
+
+    $(document).ready(function() {
+      toggles.init();
+    });
+
+  </script>
+  <script src="Choose.js"></script>
+  <script src="animate.js"></script>
+  <script src="parameter.js"></script>
+  <script src="routes.js"></script>
+  <script src="stops.js"></script>
+
+  <script src="timeline.js"></script>
+</body>
