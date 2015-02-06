@@ -71,12 +71,28 @@ html, body, #map {
   padding: 0%;
   position: fixed;
   right: 0;
+  width: 15%;
+  z-index: 2;
+  font-family:sans-serif;
+  -moz-border-radius:25px;
+  -webkit-border-radius: 25px;
+  border-radius:25px;
+}
+#container2 {
+  background: #333;
+  color: #fff;
+  height: 50%;
+  overflow: auto;
+  padding: 0%;
+  position: fixed;
+  left: 0;
   width: 18%;
   z-index: 2;
   font-family:sans-serif;
   -moz-border-radius:25px;
   -webkit-border-radius: 25px;
   border-radius:25px;
+  top:100px;
 }
 #content {
   width: 90%;
