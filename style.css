@@ -66,7 +66,7 @@ html, body, #map {
 #container {
   background: #333;
   color: #fff;
-  height: 75%;
+  height: 70%;
   overflow: auto;
   padding: 0%;
   position: fixed;
@@ -77,6 +77,8 @@ html, body, #map {
   -moz-border-radius:25px;
   -webkit-border-radius: 25px;
   border-radius:25px;
+  top:80px;
+  opacity:.8;
 }
 #container2 {
   background: #333;
@@ -86,13 +88,14 @@ html, body, #map {
   padding: 0%;
   position: fixed;
   left: 0;
-  width: 18%;
+  width: 15%;
   z-index: 2;
   font-family:sans-serif;
   -moz-border-radius:25px;
   -webkit-border-radius: 25px;
   border-radius:25px;
-  top:100px;
+  top:80px;
+  opacity:.8;
 }
 #content {
   width: 90%;
