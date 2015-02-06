@@ -5,16 +5,16 @@ var startIndex = [];
 
 d3.json("bus_day1_passenger.json", function(collection) {
 	$(document).ready(function() {
-		$.ajax({
-			type: "GET",
-			url: "bus_day1_passenger.json",
-			dataType: "json",
-			success: function(data) {
-				for (var i in data)
-					busdata.push(data[i]);
+		// $.ajax({
+		// 	type: "GET",
+		// 	url: "bus_day1_passenger.json",
+		// 	dataType: "json",
+			// success: function(data) {
+				for (var i in collection)
+					busdata.push(collection[i]);
 				timedata(busdata);
-			}
-		});
+			// }
+		// });
 	})
 })
 
