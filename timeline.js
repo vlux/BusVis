@@ -71,7 +71,7 @@ function timedata(busdata) {
 	var yAxis = d3.svg.axis()
 		.scale(y)
 		.orient("left")
-		.ticks(5);
+		.ticks(4);
 
 	var line = d3.svg.line()
 		.x(function(d) {
