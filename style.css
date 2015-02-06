@@ -70,31 +70,15 @@ html, body, #map {
   overflow: auto;
   padding: 0%;
   position: fixed;
-  right: 0;
   width: 10%;
+  right: 0;
   z-index: 2;
   font-family:sans-serif;
+  font-size: 1.05em;
   -moz-border-radius:25px;
   -webkit-border-radius: 25px;
   border-radius:25px;
-  top:80px;
-  opacity:.8;
-}
-#container2 {
-  background: #333;
-  color: #fff;
-  height: 50%;
-  overflow: auto;
-  padding: 0%;
-  position: fixed;
-  left: 0;
-  width: 15%;
-  z-index: 2;
-  font-family:sans-serif;
-  -moz-border-radius:25px;
-  -webkit-border-radius: 25px;
-  border-radius:25px;
-  top:80px;
+  top:5%;
   opacity:.8;
 }
 #content {
@@ -124,9 +108,9 @@ html, body, #map {
 #container ul li {
   display: block;
   float: left;
-  font-size: 1em;
+  font-size: .9em;
   height: 50px;
-  width: 100%;
+  width: 50%;
 }
 #container ul li a {
   display: block;
@@ -136,6 +120,68 @@ html, body, #map {
   width: 100%;
 }
 #container ul li .active {
+  background: #2C7BC9;
+  color: #fff;
+}
+
+
+#container2 {
+  background: #333;
+  color: #fff;
+  height: 30%;
+  overflow: auto;
+  padding: 0%;
+  position: fixed;
+  width: 10%;
+  left:0;
+  z-index: 2;
+  font-family:sans-serif;
+  font-size: 1.05em;
+  -moz-border-radius:25px;
+  -webkit-border-radius: 25px;
+  border-radius:25px;
+  top:15%;
+  opacity:.8;
+}
+#content2 {
+  width: 90%;
+  padding: 5%;
+}
+#container2 h1 {
+  background: #000;
+  color: #fff;
+  display: block;
+  line-height: 1.1;
+  padding: 10px 18px 15px 18px;
+  text-align: center;
+}
+#container2 h2 {
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+#container2 ul {
+  clear: both;
+  display: block;
+  line-height: 1.25;
+  margin: 0 0 20px 0;
+  padding: 0;
+  overflow: hidden;
+}
+#container2 ul li {
+  display: block;
+  float: left;
+  font-size: .9em;
+  height: 50px;
+  width: 100%;
+}
+#container2 ul li a {
+  display: block;
+  height: 45px;
+  padding: 5px 0 0 0;
+  text-align: center;
+  width: 100%;
+}
+#container2 ul li .active {
   background: #2C7BC9;
   color: #fff;
 }
