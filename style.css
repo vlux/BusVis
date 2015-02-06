@@ -71,7 +71,7 @@ html, body, #map {
   padding: 0%;
   position: fixed;
   right: 0;
-  width: 15%;
+  width: 10%;
   z-index: 2;
   font-family:sans-serif;
   -moz-border-radius:25px;
@@ -124,9 +124,9 @@ html, body, #map {
 #container ul li {
   display: block;
   float: left;
-  font-size: .875em;
+  font-size: 1em;
   height: 50px;
-  width: 33%;
+  width: 100%;
 }
 #container ul li a {
   display: block;
