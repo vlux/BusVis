@@ -128,8 +128,7 @@ function timedata(busdata) {
       return $(window).height() * 0.133;
     });
 
-  slider
-    .transition()
+  slider.transition()
     .duration(750)
     .call(brush.extent([startTime, startTime]))
     .call(brush);
