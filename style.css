@@ -74,7 +74,7 @@ html, body, #map {
   right: 0;
   z-index: 2;
   font-family:sans-serif;
-  font-size: 1.05em;
+  font-size: 13px;
   -moz-border-radius:25px;
   -webkit-border-radius: 25px;
   border-radius:25px;
@@ -128,7 +128,7 @@ html, body, #map {
 #container2 {
   background: #333;
   color: #fff;
-  height: 30%;
+  height: 35%;
   overflow: auto;
   padding: 0%;
   position: fixed;
