@@ -106,6 +106,17 @@ var toggles = {
 			return false;
 		});
 
+		$("#menu_timeline").on("click", function() {
+			var self = $(this);
+			if (self.hasClass("active")) {
+				d3.select("#timeline svg").style("visibility", "hidden");
+				self.removeClass("active");
+			} else {
+				d3.select("#timeline svg").style("visibility", "visible");
+				self.addClass("active");
+			}
+			return false;
+		});
 
 	},
 };
