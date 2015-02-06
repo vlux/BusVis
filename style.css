@@ -109,12 +109,12 @@ html, body, #map {
   display: block;
   float: left;
   font-size: .9em;
-  height: 50px;
+  height: 40px;
   width: 50%;
 }
 #container ul li a {
   display: block;
-  height: 45px;
+  height: 40px;
   padding: 5px 0 0 0;
   text-align: center;
   width: 100%;
@@ -146,6 +146,7 @@ html, body, #map {
 #content2 {
   width: 90%;
   padding: 5%;
+  vertical-align:middle;
 }
 #container2 h1 {
   background: #000;
