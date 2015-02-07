@@ -120,17 +120,20 @@ var toggles = {
 
     $("#menu_animate").on("click", function() {
       var self = $(this);
+      // self.hasClass("active") = false;
       if (self.hasClass("active")) {
         pause();
         animateFlag = false;
         self.removeClass("active");
+        $("#menu_animate>img").attr('src','play1.jpg');    
       } else {
         this.fps = 10;
         if (!animateFlag) {
           animate(this.fps);
           animateFlag = true;
+          self.addClass("active");
+          $("#menu_animate>img").attr('src','pause.png');    
         }
-        self.addClass("active");
       }
       return false;
     });
@@ -139,6 +142,9 @@ var toggles = {
         var temp = $("#menu_animate");
         if (temp.hasClass("active")) {
           temp.removeClass("active");
+          reset();
+          animateFlag = false;
+        }else{
           reset();
           animateFlag = false;
         }

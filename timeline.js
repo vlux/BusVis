@@ -43,10 +43,10 @@ function timedata(busdata) {
 
 
   var margin = {
-      top: 20,
-      right: 30,
+      top: 5,
+      right: 10,
       bottom: 50,
-      left: 70
+      left: 52
     },
     width = $("#timeline").width() - margin.left - margin.right,
     height = $("#timeline").height() - margin.top - margin.bottom;
@@ -73,7 +73,7 @@ function timedata(busdata) {
   var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
-    .ticks(5);
+    .ticks(4);
 
   var line = d3.svg.line()
     .x(function(d) {
