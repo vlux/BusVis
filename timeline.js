@@ -33,7 +33,7 @@ function timedata(busdata) {
     passengerPair.push(currPasPair);
   };
 
-  var formatDate = d3.time.format("%H:%M");
+  formatDate = d3.time.format("%H:%M");
 
   passengerPair.forEach(function(d) {
     // d.time = parseDate(d.time);

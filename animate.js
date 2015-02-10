@@ -32,7 +32,6 @@ function animate(fps) {
 	console.log(startTime)
 
 	currTime = startTime;
-	document.getElementById('currTime').href = new Date(currTime);
 
 	var feature;
 
@@ -59,6 +58,16 @@ function animate(fps) {
 
 		slider.call(brush.extent([currTime, currTime]))
 			.call(brush.event);
+
+
+		//var timeText = svg.append("text")
+		var timeText = d3.select(".currTime")
+				// .attr("x", )
+				// .attr("y", )
+	//			.attr("class", "currTime")
+				.text(formatDate(new Date(currTime)));
+				// .style("line-height",10px);
+	
 
 		$.each(busdata, function(index, item) {
 			if (DatetoStamp(item[0].time) >= currTime) {
