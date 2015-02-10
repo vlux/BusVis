@@ -12,6 +12,7 @@
   <!--link rel="stylesheet" type="text/css" href="lightview.css" /!-->
 
   <script src="js/d3.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script src="js/jquery.js"></script>
   <script src="js/leaflet.js"></script>
   <script src='js/mapbox.js'></script>
@@ -21,6 +22,13 @@
 </head>
 
 <body>
+
+  <div id = "loading">
+    <div id = "loading2">
+      <h2 >Loading Bus Data.Please wait for seconds......</h2>
+    </div>
+  </div>
+
 
   <div id="container_head">
 
@@ -49,6 +57,7 @@
         <!-- <p>play<i id="menu_animate" class="fa fa-play"></i> </p> -->
         <HR>
         <h4 class="thicker" style="line-height: 10px">Traffic Visualization</h4>
+
         <p style="font-size:0.83em">
             <span>
                 Current Time:
@@ -59,7 +68,7 @@
 
             <button class="button button-inverse button-raised button-box button-small" id="menu_animate" title="start animation"><i class="fa fa-play"></i></button>
             <button class="button button-inverse button-raised button-box button-small" id="menu_reset" title="reset animation"><i class="fa fa-stop"></i></button>
-        
+
         <!-- <button class="button button-glow button-circle button-raised button-pill button-inverse"><i id="menu_reset" class="fa fa-stop"></i></button> -->
         <!-- <i id="menu_reset" class="fa fa-stop"></i> -->
 
@@ -245,7 +254,6 @@
         </li>
         <li><a href="#" id="toggle-route-Z" class="toggle-routes">Z</a>
         </li>
-        <!--	 		<li><a href="#" id="toggle-route-0" class="toggle-routes">0</a></li> -->
       </ul>
     </div>
   </div>
@@ -256,8 +264,12 @@
     <div id="timeline"></div>
   </div>
 
-
   <script type="text/javascript">
+    $("#loading2").css({
+      left: $(window).width() / 4,
+      top:$(window).height() / 2.8
+    })
+
     L.mapbox.accessToken = '<pk.eyJ1IjoibGl1bHUiLCJhIjoiVzY2cjhiRSJ9.XYnctjNIYOorLU6qpBi5mQ>';
 
     var mapboxTiles = L.tileLayer('https://{s}.tiles.mapbox.com/v3/liulu.k7flejmm/{z}/{x}/{y}.png', {
@@ -266,7 +278,7 @@
 
     var map = L.map('map')
       .addLayer(mapboxTiles)
-      .setView([46.2317, 6.1765], 12);
+      .setView([46.2007, 6.1455], 12);
 
     map._initPathRoot()
 

@@ -9,13 +9,14 @@ d3.json("bus_day1_passenger.json", function(collection) {
 		// 	type: "GET",
 		// 	url: "bus_day1_passenger.json",
 		// 	dataType: "json",
-			// success: function(data) {
-				for (var i in collection)
-					busdata.push(collection[i]);
-				timedata(busdata);
-			// }
+		// success: function(data) {
+		for (var i in collection)
+			busdata.push(collection[i]);
+		timedata(busdata);
+		// }
 		// });
-	})
+	});
+	//console.log(d3.map(collection).size());
 })
 
 
@@ -62,12 +63,12 @@ function animate(fps) {
 
 		//var timeText = svg.append("text")
 		var timeText = d3.select(".currTime")
-				// .attr("x", )
-				// .attr("y", )
-	//			.attr("class", "currTime")
-				.text(formatDate(new Date(currTime)));
-				// .style("line-height",10px);
-	
+			// .attr("x", )
+			// .attr("y", )
+			//			.attr("class", "currTime")
+			.text(formatDate(new Date(currTime)));
+		// .style("line-height",10px);
+
 
 		$.each(busdata, function(index, item) {
 			if (DatetoStamp(item[0].time) >= currTime) {
@@ -122,6 +123,7 @@ function animate(fps) {
 		startTime = currTime;
 
 	}, timeStep)
+
 }
 
 

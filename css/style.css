@@ -5,13 +5,13 @@ body {
   overflow: hidden;
 }
 #container_menu{
-  font-family: Helvetica !important;  
+  font-family: Helvetica !important;
 }
 #container_head{
-  font-family: Helvetica !important;  
+  font-family: Helvetica !important;
 }
 #container{
-  font-family: Helvetica !important;    
+  font-family: Helvetica !important;
 }
 a:link, a:visited {
   color: white;
@@ -65,7 +65,7 @@ html, body, #map {
 }
 
 #currTime {
-  
+
 }
 
 #timeline {
@@ -287,4 +287,21 @@ h2.thicker {font-weight: 100}
 
 .leaflet-bar, .leaflet-control-layers {
   background-color: black;
+}
+
+#loading{
+  background-color:#111;
+  position:fixed;
+  line-height:11px;
+  height:100%;
+  width:100%;
+  z-index: 3;
+
+}
+#loading2 {
+  display:block;
+  font-size:1.5em;
+  font-family:Consolas;
+  color:#918d8d;
+  position:relative;
 }
