@@ -12,6 +12,7 @@
   <!--link rel="stylesheet" type="text/css" href="lightview.css" /!-->
 
   <script src="js/d3.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script src="js/jquery.js"></script>
   <script src="js/leaflet.js"></script>
   <script src='js/mapbox.js'></script>
@@ -23,7 +24,7 @@
 <body>
 
   <div id="container_head">
-    
+
     <h1>Bus Vis of Geneva</h1>
     <!-- <a href="#info" class="lightview">About Us</a>
         <div id="info" style="display:none">PKUVIS</div> -->
@@ -272,7 +273,7 @@
 
     var map = L.map('map')
       .addLayer(mapboxTiles)
-      .setView([46.2317, 6.1765], 12);
+      .setView([46.2007, 6.1455], 12);
 
     map._initPathRoot()
 
