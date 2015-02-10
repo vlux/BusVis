@@ -3,77 +3,67 @@
 
 <head>
 
-
   <title>Bus Vis</title>
-  <link href="leaflet.css" rel="stylesheet" />
+  <link href="css/leaflet.css" rel="stylesheet" />
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
-  <!--link rel="stylesheet" type="text/css" href="lightview.css" />
-  <script type="text/javascript" src="spinners.min.js"></script>
-  <script type="text/javascript" src="lightview.js"></script-->
-  <link href='style.css' rel='stylesheet' />
-  <link rel="stylesheet" href="buttons.css">
-  <!--script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script-->
-  <script src="d3.js"></script>
-  <script src="jquery.js"></script>
-  <script src="leaflet.js"></script>
-  <script src='mapbox.js'></script>
-  <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js"></script> !-->
+  <link href="css/style.css" rel='stylesheet' />
+  <link href="css/buttons.css" rel="stylesheet" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+  <!--link rel="stylesheet" type="text/css" href="lightview.css" /!-->
 
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script src="js/d3.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/leaflet.js"></script>
+  <script src='js/mapbox.js'></script>
+  <!-- script type="text/javascript" src="spinners.min.js"></script>
+  <script type="text/javascript" src="lightview.js"></script-->
 
 </head>
 
 <body>
 
-  <div id = "container_head">
-    
-        <h1>Bus Vis of Geneva</h1>
-        <!-- <a href="#info" class="lightview">About Us</a>
+  <div id="container_head">
+
+    <h1>Bus Vis of Geneva</h1>
+    <!-- <a href="#info" class="lightview">About Us</a>
         <div id="info" style="display:none">PKUVIS</div> -->
   </div>
 
-  <div id = "container_menu">
-    <div id = "content_menu">
+  <div id="container_menu">
+    <div id="content_menu">
       <h5 class="thicker" style="line-height: 10px">Buses on the Map: ;</h5>
       <h5 class="thicker" style="line-height: 10px" style="margin-top:10px">Routes on the Map: 86</h5>
       <HR style="margin-top:10px">
       <ul class="fa-ul">
 
 
-        <!-- <li><a href="#" id="menu_routes" class="menus">Routes</a></li>
-        <li><a href="#" id="menu_stops" class="menus">Stops</a></li> -->
-        
-        <!-- <li><a href="#" id="menu_animate" class="menus">Animate</a></li> -->
-        <!-- <li><a href="#" id="menu_reset" class="menus">Reset</a></li> -->
-        <!-- <li><a href="#" id="menu_animate" class="menus"><img src="play.jpg"></a></li>      -->
-        
-            <!-- <i id="menu_routes" class="fa fa-road"></i> -->
-               
-        <button class="button button-inverse button-raised button-box button-small" id="menu_routes" title="Display routes"><i class="fa fa-road"></i></button>
-        <!-- <i id="menu_stops" class="fa fa-bus"></i> -->
-        <button class="button button-inverse button-raised button-box button-small" id="menu_stops" title="Display stops"><i class="fa fa-bus"></i></button>
-        
+        <button class="button button-inverse button-raised button-box button-small" id="menu_routes" title="Display routes"><i class="fa fa-road"></i>
+        </button>
+        <button class="button button-inverse button-raised button-box button-small" id="menu_stops" title="Display stops"><i class="fa fa-bus"></i>
+        </button>
 
         <a href="#" id="selectAll" class="button button-inverse button-raised button-rounded button-small" style="margin-top:10px">Select All Routes</a>
         <br>
         <a href="#" id="selectNone" class="button button-inverse button-raised button-rounded button-small" style="margin-top:10px">Select None Route</a>
-        
+
         <!-- <p>play<i id="menu_animate" class="fa fa-play"></i> </p> -->
         <HR>
         <h4 class="thicker" style="line-height: 10px">Traffic Visualization</h4>
         <p>
-            <h5 class="thicker" style="line-height:5px">Current Time: </h5>
-            <button class="button button-inverse button-raised button-box button-small" id="menu_animate" title="start animation"><i class="fa fa-play"></i></button>
-            <button class="button button-inverse button-raised button-box button-small" id="menu_reset" title="reset animation"><i class="fa fa-stop"></i></button>
+          <h5 class="thicker" style="line-height:5px">Current Time: </h5>
+          <button class="button button-inverse button-raised button-box button-small" id="menu_animate" title="start animation"><i class="fa fa-play"></i>
+          </button>
+          <button class="button button-inverse button-raised button-box button-small" id="menu_reset" title="reset animation"><i class="fa fa-stop"></i>
+          </button>
         </p>
         <!-- <button class="button button-glow button-circle button-raised button-pill button-inverse"><i id="menu_reset" class="fa fa-stop"></i></button> -->
         <!-- <i id="menu_reset" class="fa fa-stop"></i> -->
-        
+
       </ul>
     </div>
   </div>
 
-  <div id = "container">
+  <div id="container">
     <div id="content">
       <h2 class="thicker">Routes</h2>
       <ul>
@@ -258,10 +248,9 @@
 
   <div id="map"></div>
 
-  <div id = "container_tl">
-    <div id = "timeline"></div>
-    <!-- <li><a href="#" id="menu_timeline" class="menus active">Timeline</a></li>
- -->  </div>
+  <div id="container_tl">
+    <div id="timeline"></div>
+  </div>
 
 
   <script type="text/javascript">
@@ -286,7 +275,6 @@
     // $(document).ready(function() {
     //   toggles.init();
     // });
-
   </script>
   <script src="choose.js"></script>
   <script src="animate.js"></script>
