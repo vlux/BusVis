@@ -24,6 +24,14 @@ d3.json("routes.json", function(collection) {
     .style('stroke-width', "0.5px")
     .style("fill-opacity", 2.5);
 
+  feature
+    .append("title")
+    .text(function(d){
+      return d.properties.routeCode;
+    })
+
+  toggles.init();
+
   reset();
 
   map.on("viewreset", reset);

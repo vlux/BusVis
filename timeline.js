@@ -1,6 +1,6 @@
 function timedata(busdata) {
   passengerPair = [];
-  var timeStep_p = 1000 * 900;
+  var timeStep_p = 1000 * 60;
 
   var tlStartIndex = [];
   for (var i = 0; i < busdata.length; i++)
@@ -81,7 +81,8 @@ function timedata(busdata) {
     })
     .y(function(d) {
       return y(d.passenger);
-    });
+    })
+    .interpolate("monotone");
 
 
   var timesvg = d3.select("#timeline").append("svg")
@@ -129,6 +130,39 @@ function timedata(busdata) {
     .attr("height", function() {
       return $(window).height() * 0.133;
     });
+    // console.log($(timeG[0][0]).offsetLeft)
+  $(timeG[0][0]).mousemove(function(e) {
+    var x1 = e.originalEvent.x || e.originalEvent.layerX || 0; 
+    var y1 = e.originalEvent.y || e.originalEvent.layerY || 0; 
+    // console.log(xx, yy);
+
+
+    slider.selectAll(".mousehandle").remove();
+    slider.selectAll(".texthover").remove();
+    mousehandle = slider.append("rect")
+      .attr("class", "mousehandle")
+      .attr("transform", "translate("+(x1-88)+", -6)")
+      .attr("width", 2)
+      .attr("height", function() {
+        return $(window).height() * 0.133;
+      })
+      .style("pointer-events","none");
+    // console.log(xx);
+
+    var texthover = formatDate(x.invert(x1-87));
+    slider.append("text")
+      .attr("class","texthover")
+      .attr("transform", "translate("+(x1-105)+", 5)")  
+      .text(texthover)
+      .style("fill", "#9ecae1")
+      .style("stroke", null)
+  })
+
+  $(timeG[0][0]).mouseout(function(e) {
+    timeG.selectAll(".mousehandle").remove();
+    timeG.selectAll(".texthover").remove();
+
+  })
 
   slider.transition()
     .duration(750)

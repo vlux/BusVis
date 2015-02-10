@@ -1,12 +1,20 @@
 body {
   background: #fafafa;
   font-size: 1em;
-  font-family: sans-serif;
   line-height: 1.5;
   overflow: hidden;
 }
+#container_menu{
+  font-family: Helvetica !important;  
+}
+#container_head{
+  font-family: Helvetica !important;  
+}
+#container{
+  font-family: Helvetica !important;    
+}
 a:link, a:visited {
-  color: #2C7BC9;
+  color: white;
   text-decoration: none;
   -webkit-transition: color .1s ease-in;
   -moz-transition: color .1s ease-in;
@@ -14,7 +22,7 @@ a:link, a:visited {
   transition: color .1s ease-in;
 }
 a:hover, a:visited:hover {
-  color: #19b5f7;
+  color: #808080;
   text-decoration: none;
 }
 html, body, #map {
@@ -47,6 +55,17 @@ html, body, #map {
   stroke-width: 1.25px;
   cursor: crosshair;
 }
+
+.mousehandle {
+  fill: #808080;
+  stroke: #000;
+  stroke-opacity: .5;
+  stroke-width: 1.25px;
+  cursor: crosshair;
+}
+
+
+
 #timeline {
   position: absolute;
   width: 96%;
@@ -67,7 +86,7 @@ html, body, #map {
   overflow: auto;
   padding: 0%;
   position: fixed;
-  width: 10%;
+  width: 16%;
   right: 1%;
   z-index: 2;
   font-family: sans-serif;
@@ -84,7 +103,7 @@ html, body, #map {
   padding: 5%;
 }
 #container h2 {
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   text-align: center;
 }
 #container ul {
@@ -99,18 +118,19 @@ html, body, #map {
   display: block;
   float: left;
   font-size: .9em;
-  height: 40px;
-  width: 50%;
+  height: 25px;
+  width: 25%;
 }
 #container ul li a {
   display: block;
-  height: 40px;
-  padding: 5px 0 0 0;
+  height: 18px;
+  padding: 5px 0px 0 0px;
+  /*margin: 0 10px 0 10px;*/
   text-align: center;
-  width: 100%;
+  width: 90%;
 }
 #container ul li .active {
-  background: #2C7BC9;
+  background: #808080;
   color: #fff;
 }
 #container_menu {
@@ -121,7 +141,7 @@ html, body, #map {
   overflow: none;
   padding: 0%;
   position: fixed;
-  width: 10%;
+  width: 18%;
   left: 1%;
   z-index: 2;
   font-family: sans-serif;
@@ -136,7 +156,7 @@ html, body, #map {
   padding: 5%;
   vertical-align: middle;
 }
-#container_menu h1 {
+/*#container_menu h1 {
   background: #000;
   color: #fff;
   display: block;
@@ -147,29 +167,28 @@ html, body, #map {
 #container_menu h2 {
   margin: 0 0 20px 0;
   text-align: center;
-}
+}*/
 #container_menu ul {
   clear: both;
   display: block;
-  line-height: 1.25;
   margin: 0 0 20px 0;
   padding: 0;
   overflow: hidden;
 }
-#container_menu ul li {
+/*#container_menu ul li {
   display: block;
   float: left;
   font-size: .9em;
   height: 50px;
   width: 100%;
-}
-#container_menu ul li a {
+}*/
+/*#container_menu ul li a {
   display: block;
   height: 45px;
   padding: 5px 0 0 0;
   text-align: center;
   width: 100%;
-}
+}*/
 #container_menu ul li .active {
   background: none;
   color: #fff;
@@ -237,6 +256,33 @@ html, body, #map {
   line-height: 1.1;
   padding: 10px 18px 15px 18px;
   text-align: center;
+  overflow: hidden;
 }
 
 img{max-width:50px;}
+
+button.button-inverse.active{
+  color: #fff;
+}
+
+a.button-inverse.active{
+  color: #fff;
+}
+
+.stop{
+  cursor: pointer;
+}
+
+h5.thicker {font-weight: 100}
+
+h4.thicker {font-weight: 100}
+
+h2.thicker {font-weight: 100}
+
+.leaflet-touch .leaflet-bar a {
+  height: 25px;
+}
+
+.leaflet-bar, .leaflet-control-layers {
+  background-color: black;
+}

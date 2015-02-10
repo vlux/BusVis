@@ -8,10 +8,20 @@ d3.json("stops.json", function(collection) {
     .data(collection.features)
     .enter().append("circle")
     .attr("class", "stop")
+    .attr("stopid", function(d){
+      return d.properties.routeCode;
+    })
     .style("stroke", "black")
     .style("fill", "#737373")
     .attr("r", 3)
     .style("visibility", "hidden");
+
+  feature
+    .append("title")
+    .text(function(d){
+      return d.properties.stopName;
+    })
+
 
 
   map.on("viewreset", update);
