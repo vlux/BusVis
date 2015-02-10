@@ -32,6 +32,7 @@ function animate(fps) {
 	console.log(startTime)
 
 	currTime = startTime;
+	document.getElementById('currTime').href = new Date(currTime);
 
 	var feature;
 

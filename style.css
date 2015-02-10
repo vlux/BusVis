@@ -64,7 +64,9 @@ html, body, #map {
   cursor: crosshair;
 }
 
-
+#currTime {
+  
+}
 
 #timeline {
   position: absolute;
