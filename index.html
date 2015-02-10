@@ -23,6 +23,13 @@
 
 <body>
 
+  <div id = "loading">
+    <div id = "loading2">
+      <h2 >Loading the Whole Web......</h2>
+    </div>
+  </div>
+
+
   <div id="container_head">
 
     <h1>Bus Vis of Geneva</h1>
@@ -253,7 +260,6 @@
         </li>
         <li><a href="#" id="toggle-route-Z" class="toggle-routes">Z</a>
         </li>
-        <!--	 		<li><a href="#" id="toggle-route-0" class="toggle-routes">0</a></li> -->
       </ul>
     </div>
   </div>
@@ -265,6 +271,11 @@
   </div>
 
   <script type="text/javascript">
+    $("#loading2").css({
+      left: $(window).width() / 2.8,
+      top:$(window).height() / 2.8
+    })
+
     L.mapbox.accessToken = '<pk.eyJ1IjoibGl1bHUiLCJhIjoiVzY2cjhiRSJ9.XYnctjNIYOorLU6qpBi5mQ>';
 
     var mapboxTiles = L.tileLayer('https://{s}.tiles.mapbox.com/v3/liulu.k7flejmm/{z}/{x}/{y}.png', {
