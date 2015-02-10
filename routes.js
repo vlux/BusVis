@@ -1,59 +1,59 @@
 function project(point) {
-	var latlng = new L.LatLng(point[1], point[0]);
-	var layerPoint = map.latLngToLayerPoint(latlng);
-	return [layerPoint.x, layerPoint.y];
+  var latlng = new L.LatLng(point[1], point[0]);
+  var layerPoint = map.latLngToLayerPoint(latlng);
+  return [layerPoint.x, layerPoint.y];
 }
 
 var routeID = function(d, i) {
-	return "route-" + d.properties.routeCode;
+  return "route-" + d.properties.routeCode;
 };
 
-d3.json("routes.json", function(collection) {
+d3.json("data/routes.json", function(collection) {
 
-	var path = d3.geo.path().projection(project);
+  var path = d3.geo.path().projection(project);
 
-	var feature = routeG.selectAll("path")
-		.data(collection.features)
-		.enter().append("path")
-		.attr("class", "routepath")
-		.attr("id", routeID)
-		.attr("d", d3.geo.path())
-		.style("visibility", "hidden")
-		.style("stroke", "#154e80")
-		.style("fill", "none")
-		.style('stroke-width', "0.5px")
-		.style("fill-opacity", 2.5);
+  var feature = routeG.selectAll("path")
+    .data(collection.features)
+    .enter().append("path")
+    .attr("class", "routepath")
+    .attr("id", routeID)
+    .attr("d", d3.geo.path())
+    .style("visibility", "hidden")
+    .style("stroke", "#154e80")
+    .style("fill", "none")
+    .style('stroke-width', "0.5px")
+    .style("fill-opacity", 2.5);
 
-	feature
-		.append("title")
-		.text(function(d) {
-			return d.properties.routeCode;
-		})
+  feature
+    .append("title")
+    .text(function(d) {
+      return d.properties.routeCode;
+    })
 
-	toggles.init();
+  toggles.init();
 
-	reset();
+  reset();
 
-	map.on("viewreset", reset);
-	map.setView([46.1957, 6.1455], 12);
+  map.on("viewreset", reset);
+  map.setView([46.1957, 6.1455], 12);
 
-	function reset() {
-		bounds = [
-			[map.getBounds()._southWest.lng, map.getBounds()._southWest.lat],
-			[map.getBounds()._northEast.lng, map.getBounds()._northEast.lat]
-		]
-		var bottomLeft = project(bounds[0]),
+  function reset() {
+    bounds = [
+      [map.getBounds()._southWest.lng, map.getBounds()._southWest.lat],
+      [map.getBounds()._northEast.lng, map.getBounds()._northEast.lat]
+    ]
+    var bottomLeft = project(bounds[0]),
 
-			topRight = project(bounds[1]);
+      topRight = project(bounds[1]);
 
-		svg.attr("width", topRight[0] - bottomLeft[0])
-			.attr("height", bottomLeft[1] - topRight[1])
-			.style("margin-left", bottomLeft[0] + "px")
-			.style("margin-top", topRight[1] + "px");
+    svg.attr("width", topRight[0] - bottomLeft[0])
+      .attr("height", bottomLeft[1] - topRight[1])
+      .style("margin-left", bottomLeft[0] + "px")
+      .style("margin-top", topRight[1] + "px");
 
-		g.attr("transform", "translate(" + -bottomLeft[0] + "," + -topRight[1] +
-			")");
+    g.attr("transform", "translate(" + -bottomLeft[0] + "," + -topRight[1] +
+      ")");
 
-		feature.attr("d", path);
-	}
+    feature.attr("d", path);
+  }
 })
