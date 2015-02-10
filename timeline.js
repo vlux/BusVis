@@ -33,7 +33,7 @@ function timedata(busdata) {
 		passengerPair.push(currPasPair);
 	};
 
-	var formatDate = d3.time.format("%H:%M");
+	formatDate = d3.time.format("%H:%M");
 
 	passengerPair.forEach(function(d) {
 		// d.time = parseDate(d.time);
@@ -128,7 +128,7 @@ function timedata(busdata) {
 		.attr("transform", "translate(0, -6)")
 		.attr("width", 2)
 		.attr("height", function() {
-			return $(window).height() * 0.133;
+			return $(window).height() * 0.15;
 		});
 	// console.log($(timeG[0][0]).offsetLeft)
 	$(timeG[0][0]).mousemove(function(e) {
