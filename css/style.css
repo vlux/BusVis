@@ -64,9 +64,13 @@ html, body, #map {
   cursor: crosshair;
 }
 
-#currTime {
-
-}
+/*.fps{
+  position:absolute;
+  width:28px;
+  height:12px;
+  cursor:n-resize;
+  top:44%;
+}*/
 
 #timeline {
   position: absolute;

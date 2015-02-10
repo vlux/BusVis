@@ -248,5 +248,10 @@ var toggles = {
 			//   self.classed("fa-pause",false);
 			// });
 
+		// $(function() {
+		// 	$("#fps").slider();
+		// })
+    
+
 	},
 };
