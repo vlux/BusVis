@@ -23,15 +23,11 @@
 
 <body>
 
-  <div id = "loading">
-
-      <h2 style="text-align:center" id = "loading2">Loading Bus Data.Please wait for seconds......</h2>
- 
+  <div id="loading">
+    <h2 style="text-align:center" id="loading2">Loading Bus Data.Please wait for seconds......</h2>
   </div>
 
-
   <div id="container_head">
-
     <h1>Bus Vis of Geneva</h1>
     <!-- <a href="#info" class="lightview">About Us</a>
         <div id="info" style="display:none">PKUVIS</div> -->
@@ -59,15 +55,17 @@
         <h4 class="thicker" style="line-height: 10px">Traffic Visualization</h4>
 
         <p style="font-size:0.83em">
-            <span>
-                Current Time:
+          <span>
+            Current Time:
             <!-- <h5>Current Time: </h5> -->
             <text class="currTime">06:00</text>
-            </span>
+          </span>
         </p>
 
-            <button class="button button-inverse button-raised button-box button-small" id="menu_animate" title="start animation"><i class="fa fa-play"></i></button>
-            <button class="button button-inverse button-raised button-box button-small" id="menu_reset" title="reset animation"><i class="fa fa-stop"></i></button>
+        <button class="button button-inverse button-raised button-box button-small" id="menu_animate" title="start animation"><i class="fa fa-play"></i>
+        </button>
+        <button class="button button-inverse button-raised button-box button-small" id="menu_reset" title="reset animation"><i class="fa fa-stop"></i>
+        </button>
 
         <!-- <button class="button button-glow button-circle button-raised button-pill button-inverse"><i id="menu_reset" class="fa fa-stop"></i></button> -->
         <!-- <i id="menu_reset" class="fa fa-stop"></i> -->
@@ -265,10 +263,6 @@
   </div>
 
   <script type="text/javascript">
-    // $("#loading2").css({
-    //   left: $(window).width() / 4,
-    //   top:$(window).height() / 2.8
-    // })
 
     L.mapbox.accessToken = '<pk.eyJ1IjoibGl1bHUiLCJhIjoiVzY2cjhiRSJ9.XYnctjNIYOorLU6qpBi5mQ>';
 
