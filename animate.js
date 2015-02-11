@@ -3,7 +3,7 @@ var startTime = new Date('2012-10-01 6:00:00').getTime();
 var endTime = new Date('2012-10-01 23:00:00').getTime();
 var startIndex = [];
 
-d3.json("bus_day1_passenger.json", function(collection) {
+d3.json("data/bus_day1_passenger.json", function(collection) {
 	$(document).ready(function() {
 		// $.ajax({
 		// 	type: "GET",
@@ -16,7 +16,6 @@ d3.json("bus_day1_passenger.json", function(collection) {
 		// }
 		// });
 	});
-	//console.log(d3.map(collection).size());
 })
 
 
@@ -30,7 +29,6 @@ function DatetoStamp(date) {
 function animate(fps) {
 
 	var timeStep = 1000 / fps;
-	console.log(startTime)
 
 	currTime = startTime;
 
@@ -43,9 +41,13 @@ function animate(fps) {
 			.enter()
 			.append("circle")
 			.attr("class", "bus")
+			.attr("busid", function(d) {
+				return d[0].routeCode
+			})
 			.style("stroke", "black")
 			.style("opacity", .6)
 			.style("fill", "yellow")
+			//.style("visibility", "hidden")
 	} else {
 		initAnimate = true;
 		feature = stopG.selectAll(".bus");
@@ -76,7 +78,8 @@ function animate(fps) {
 				item.passenger = 0;
 
 			} else if (DatetoStamp(item[item.length - 1].time) <= currTime) {
-				item.LatLng = L.latLng(item[item.length - 1].geo[1], item[item.length -
+				item.LatLng = L.latLng(item[item.length - 1].geo[1], item[
+					item.length -
 					1].geo[0]);
 				item.passenger = 0;
 
@@ -86,11 +89,16 @@ function animate(fps) {
 				for (var i = startIndex[index]; i < item.length - 1; i++) {
 					var nowTimeStamp = DatetoStamp(item[i].time),
 						nextTimeStamp = DatetoStamp(item[i + 1].time);
-					if ((nextTimeStamp >= currTimeStamp) && (currTimeStamp > nowTimeStamp)) {
-						var Lat = item[i].geo[1] + (item[i + 1].geo[1] - item[i].geo[1]) *
-							((currTimeStamp - nowTimeStamp) / (nextTimeStamp - nowTimeStamp))
-						var Lng = item[i].geo[0] + (item[i + 1].geo[0] - item[i].geo[0]) *
-							((currTimeStamp - nowTimeStamp) / (nextTimeStamp - nowTimeStamp))
+					if ((nextTimeStamp >= currTimeStamp) && (currTimeStamp >
+							nowTimeStamp)) {
+						var Lat = item[i].geo[1] + (item[i + 1].geo[1] - item[i].geo[
+								1]) *
+							((currTimeStamp - nowTimeStamp) / (nextTimeStamp -
+								nowTimeStamp))
+						var Lng = item[i].geo[0] + (item[i + 1].geo[0] - item[i].geo[
+								0]) *
+							((currTimeStamp - nowTimeStamp) / (nextTimeStamp -
+								nowTimeStamp))
 
 						item.LatLng = L.latLng(Lat, Lng);
 						item.passenger = Math.sqrt(item[i].passenger) * 0.8;
