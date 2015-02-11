@@ -78,16 +78,15 @@ var toggles = {
       var self = $(this);
       var route = "#" + self.attr("id").replace("toggle-", "");
       var stopcode = self.attr("id").replace("toggle-route-", "");
-      // console.log(stopcode);
       if (self.hasClass("active")) {
         $(route).css({
           "stroke-width": "1px",
           "stroke": "#154e80",
         });
-        $(".stop[stopid=" + stopcode + "]").css({
+        $(".stop[stopid =" + stopcode + "]").css({
           "fill": "#737373"
         });
-        $(".bus[busid=" + stopcode + "]").css({
+        $(".bus[busid =" + stopcode + "]").css({
           "visibility": "hidden"
         });
         $(route).animate({
@@ -100,14 +99,14 @@ var toggles = {
           "stroke-width": "5px",
           "stroke": "#6baed6",
         });
-        $(".stop[stopid=" + stopcode + "]").css({
+        $(".stop[stopid =" + stopcode + "]").css({
           "fill": "yellow"
         });
-        if (FirstClick && Clicked == 0) {
+        if (FirstClick) {
           d3.selectAll(".bus").style("visibility", "hidden");
           FirstClick = false;
         }
-        $(".bus[busid=" + stopcode + "]").css({
+        $(".bus[busid =" + stopcode + "]").css({
           "visibility": "visible"
         });
         $(route).animate({
@@ -153,8 +152,8 @@ var toggles = {
         }, 500);
         self.addClass("active");
       }
-
-      // }
+      if (animateFlag)
+        d3.selectAll(".bus").style("visibility", "visible");
       return false;
     });
 
@@ -180,6 +179,7 @@ var toggles = {
         }, 500);
         self.removeClass("active");
       }
+      FirstClick = true;
       return false;
     });
 
@@ -242,12 +242,10 @@ var toggles = {
     $("#menu_reset").on("click", function() {
         var temp = $("#menu_animate i");
         if (temp.hasClass("fa-pause")) {
-          // temp.removeClass("fa-pause");
           $("#menu_animate .fa-pause").attr('class', 'fa fa-play');
           reset();
           animateFlag = false;
           FirstClick = true;
-
         } else {
           reset();
           animateFlag = false;
