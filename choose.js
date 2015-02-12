@@ -73,7 +73,6 @@ var FirstClick = true;
 
 var toggles = {
 
-<<<<<<< HEAD
 	init: function() {
 		$(".toggle-routes").on("click", function() {
 			var self = $(this);
@@ -258,7 +257,7 @@ var toggles = {
     
 
 	},
-=======
+
   init: function() {
     $(".toggle-routes").on("click", function() {
       var self = $(this);
@@ -414,9 +413,9 @@ var toggles = {
         $("#menu_animate .fa-pause").attr('class', "fa fa-play")
           .attr('title', "start animation");
       } else {
-        this.fps = 10;
+        fps = 10;
         if (!animateFlag) {
-          animate(this.fps);
+          animate(fps);
           animateFlag = true;
           $("#menu_animate .fa-play").attr('class', 'fa fa-pause')
             .attr('title', "pause animation");
@@ -448,6 +447,25 @@ var toggles = {
       //   self.classed("fa-pause",false);
       // });
 
+    $( "#fps_slider" ).slider({
+          range: "min",
+          min: 1,
+          max: 20,
+          value: 10,
+          change: function(event, ui) {
+            var value = ui.value;
+            if(animateFlag) {
+              pause();
+              animate(value);
+            }else{
+              fps = value;
+            }
+          }
+        });
+      
+
+
+
+
   },
->>>>>>> origin/vlux
 };

@@ -64,13 +64,33 @@ html, body, #map {
   cursor: crosshair;
 }
 
-/*.fps{
+#fps_slider{
   position:absolute;
-  width:28px;
-  height:12px;
-  cursor:n-resize;
-  top:44%;
-}*/
+  width:140px;
+  height:5px;
+  /*cursor:n-resize;*/
+  /*background: blue;*/
+  /*background: -webkit-gradient(linear, left, color-stop(0, #ff4f02), color-stop(1, #8f2c00));*/
+
+}
+
+.ui-slider .ui-slider-handle {
+  width: .6em !important;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+  top: -.6em !important;
+}
+
+.ui-slider-horizontal .ui-slider-range-min {
+  background: #8ECCF0 !important;
+  /*background: -webkit-gradient(linear, left, color-stop(0, #ff4f02), color-stop(1, #8f2c00));*/
+}
+
+/*background-image: -webkit-gradient(linear, left, color-stop(0, #ff4f02), color-stop(1, #8f2c00));*/
+
+
+
 
 #timeline {
   position: absolute;
@@ -300,7 +320,7 @@ h2.thicker {font-weight: 100}
   height:100%;
   width:100%;
   z-index: 3;
-
+  opacity: .8;
 }
 #loading2 {
   display:block;
